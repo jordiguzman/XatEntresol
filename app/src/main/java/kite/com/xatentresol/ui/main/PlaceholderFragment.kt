@@ -4,9 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import android.support.v4.app.Fragment
-import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import kite.com.xatentresol.R
 
@@ -28,12 +26,8 @@ class PlaceholderFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val root = inflater.inflate(R.layout.fragment_main, container, false)
-        val textView: TextView = root.findViewById(R.id.section_label)
-        pageViewModel.text.observe(this, Observer<String> {
-            textView.text = it
-        })
-        return root
+
+        return inflater.inflate(R.layout.fragment_main, container, false)
     }
 
     companion object {
